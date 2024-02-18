@@ -36,7 +36,7 @@ public class CompanyController {
         return coupon;
     }
 
-    @PutMapping("/coupon")
+    @PutMapping("/updatecoupon")
     public Coupon updateCoupon(@RequestBody Coupon coupon) throws CouponException, UnAuthorizedException {
         getService().updateCoupon(coupon);
         return coupon;
@@ -67,8 +67,8 @@ public class CompanyController {
     public Company getCompanyDetails() throws CompanyException, UnAuthorizedException {
         return getService().getCompanyDetails();
     }
-    @GetMapping ("/couponbyid")
-    public Coupon getCouponById(long couponID) throws CouponException, UnAuthorizedException{
+    @GetMapping ("/couponbyid/{couponID}")
+    public Coupon getCouponById(@PathVariable long couponID) throws CouponException, UnAuthorizedException{
         return getService().getCouponById(couponID);
     }
 

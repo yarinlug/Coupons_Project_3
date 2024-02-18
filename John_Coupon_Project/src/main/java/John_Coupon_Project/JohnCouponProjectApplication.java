@@ -21,9 +21,9 @@ public class JohnCouponProjectApplication {
 
 
 //        // Get the CouponDailyExpirationJob bean and start it in a new thread
-//        CouponDailyExpirationJob couponDailyExpirationJob = context.getBean(CouponDailyExpirationJob.class);
-//        Thread jobThread = new Thread(couponDailyExpirationJob);
-//        jobThread.start();
+        CouponDailyExpirationJob couponDailyExpirationJob = context.getBean(CouponDailyExpirationJob.class);
+        Thread jobThread = new Thread(couponDailyExpirationJob);
+        jobThread.start();
 //
 //        // Get the LoginManager bean and perform login
 //        LoginManager loginManager = context.getBean(LoginManager.class);

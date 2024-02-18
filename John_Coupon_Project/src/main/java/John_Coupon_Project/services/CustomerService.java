@@ -117,7 +117,7 @@ public class CustomerService extends ClientService {
             }
         }
         if (couponsByCategory.isEmpty()) {
-            throw new CouponException("No coupons found for this category");
+            throw new CouponException("No coupons found for: " + category + " category");
         }
         return couponsByCategory;
     }
@@ -140,9 +140,7 @@ public class CustomerService extends ClientService {
             if (c.getPrice() <= maxPrice)
                 couponsByPrice.add(c);
         }
-        if (couponsByPrice.isEmpty())
-            throw new CouponException("No coupons found for the specified price!");
-        else return couponsByPrice;
+        return couponsByPrice;
     }
 
     /**

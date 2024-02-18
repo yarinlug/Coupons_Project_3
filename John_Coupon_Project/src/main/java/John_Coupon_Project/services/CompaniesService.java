@@ -98,7 +98,7 @@ public class CompaniesService extends ClientService {
         if (couponRepository.existsById(coupon.getId())) {
             // Check if the title is being changed
             if (!isTitleUnchanged(coupon)) {
-                Set<Coupon> companyCoupons = couponRepository.findCouponsByCompanyId(coupon.getCompany().getId());
+                Set<Coupon> companyCoupons = couponRepository.findCouponsByCompanyId(this.companyID);
                 companyCoupons.remove(coupon);
 
                 // Make sure we're not changing the coupon's title to one that already exists within the company

@@ -29,7 +29,7 @@ public class CustomerController {
         this.tokensStore = tokensStore;
     }
 
-    @PostMapping("/purchasecoupon/{couponID}")
+    @PutMapping("/purchasecoupon/{couponID}")
     public String purchaseCoupon(@PathVariable long couponID) throws CouponException, CustomerException, UnAuthorizedException {
         getService().purchaseCoupon(couponID);
         return "Coupon purchased";
