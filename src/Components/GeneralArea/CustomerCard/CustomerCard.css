@@ -1,0 +1,23 @@
+.CustomerCard {
+    text-align: center;
+}
+
+.CustomerCard .MuiCard-root {
+    background-color: #d6b3b3ad;
+    max-width: 400px;
+    /* Example max-width */
+    margin: 10px;
+    border-radius: 15px;
+    border: solid 2px grey;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+.CustomerCard .title{
+    font-weight: bold;
+}
+.CustomerCard a{
+    text-decoration: none
+}
+.CustomerCard .MuiCard-root:hover {
+    transition: background-color 0.7s;
+    background-color: rgb(166, 166, 233);
+}

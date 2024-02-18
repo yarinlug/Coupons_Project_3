@@ -1,0 +1,32 @@
+.UpdateCompany {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 20px; /* Add padding for better appearance */
+  }
+  
+  .UpdateCompany .MuiFormControl-root {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px; /* Adjust the max-width as needed */
+    padding-left: 20px;
+  }
+  
+  /* Add a class to style FormLabel specifically */
+  .UpdateCompany .MuiFormLabel-root {
+    margin-bottom: 5px; /* Add some spacing between labels and input fields */
+  }
+  
+  /* Style the TextField inputs */
+  .UpdateCompany .MuiTextField-root {
+    width: 100%;
+  }
+  
+  /* Style the Button */
+  .UpdateCompany .MuiButton-root {
+    width: 60%;
+    max-width: 400px; /* Adjust the max-width as needed */
+    margin-top: 20px; /* Add some spacing between the last input and the button */
+  }
+  

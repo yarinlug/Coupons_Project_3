@@ -1,0 +1,39 @@
+.CouponDetails {
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center; /* Center align children horizontally */
+    text-align: center;
+}
+
+.CouponDetails .MuiCard-root {
+    background-color: #d4717e4f;
+    max-width: 400px;
+    margin: 10px;
+    border-radius: 15px;
+    border: solid 2px rgb(112, 105, 214);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.CouponDetails .MuiCard-root:hover {
+    background-color:  rgb(110, 110, 226);
+    transition: background-color 0.7s;
+}
+
+.CouponDetails .MuiButton-contained {
+    margin-top: 3px; 
+}
+
+.CouponDetails .PurchasedCoupon {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    /* transform: rotate(45deg); */
+    background-color: #FF5252;
+    color: rgb(243, 193, 193);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+

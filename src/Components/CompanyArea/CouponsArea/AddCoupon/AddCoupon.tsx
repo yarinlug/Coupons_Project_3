@@ -1,0 +1,166 @@
+import { useNavigate } from "react-router-dom";
+import "./AddCoupon.css";
+import { useForm } from "react-hook-form";
+import Coupon from "../../../../Models/Coupon";
+import companyService from "../../../../Services/CompanyService";
+import { toast } from "react-toastify";
+import errorHandler from "../../../../Services/ErrorHandler";
+import { Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField } from "@mui/material";
+import { render } from "react-dom";
+import { authStore } from "../../../../Redux/OurStore";
+
+function AddCoupon(): JSX.Element {
+    const { register, handleSubmit, setValue, formState: { errors } } = useForm<Coupon>();
+    const navigate = useNavigate();
+    const company = authStore.getState().user;
+    const currentDate = new Date;
+    // function getBase64(event) {
+    //     let file = event.target.files[0];
+    //     let reader = new FileReader();
+        
+    //     reader.readAsDataURL(file);
+        
+    //     reader.onload = function() {
+    //         console.log(reader.result);
+    //     };
+    
+    //     reader.onerror = function(error) {
+    //         errorHandler.showError(error);
+    //     };
+    // }
+    
+    function sendForm(coupon: Coupon) {
+        if (new Date(coupon.startDate) >= new Date(coupon.endDate)) {
+            toast.error("Start date must be before the expiration date");
+            return;
+        }
+        if (new Date(coupon.startDate) < currentDate) {
+            toast.error("Start date must be today or in the future");
+            return;
+          }
+        coupon.company = company;
+    
+        companyService.addCoupon(coupon)
+            .then(() => {
+                toast.success("Coupon Added");
+                navigate("/company/coupons");
+            })
+            .catch(err => errorHandler.showError(err));
+    }
+    
+
+    return (
+        <div className="AddCoupon">
+            <FormControl>
+                <FormLabel><h2>Add Coupon</h2></FormLabel>
+                <br />
+                <FormLabel>Coupon Title:
+                    <TextField
+                        variant="outlined"
+                        id="title"
+                        {...register("title", {
+                            required: { message: "Must enter title!", value: true },
+                        })}
+                        helperText={errors.title && <span className="errorText">{errors.title.message}</span>}
+                    />
+                </FormLabel>
+                <FormLabel>Coupon Description:
+                    <TextField
+                        variant="outlined"
+                        id="description"
+                        {...register("description", {
+                            required: { message: "Must enter description", value: true },
+                        })}
+                        helperText={errors.description && <span className="errorText">{errors.description.message}</span>}
+                    />
+                </FormLabel>
+                <FormLabel>Coupon Start Date:
+                    <TextField
+                        variant="outlined"
+                        id="startDate"
+                        type="date"
+                        {...register("startDate", {
+                            required: { message: "Must enter start date", value: true },
+                        })}
+                        helperText={errors.startDate && <span className="errorText">{errors.startDate.message}</span>}
+                    />
+                </FormLabel>
+                <FormLabel>Coupon Expiration Date:
+                    <TextField
+                        variant="outlined"
+                        id="endDate"
+                        type="date"
+                        {...register("endDate", {
+                            required: { message: "Must enter end date", value: true },
+                        })}
+                        helperText={errors.endDate && <span className="errorText">{errors.endDate.message}</span>}
+                    />
+                </FormLabel>
+                <FormLabel>Coupon Price:
+                <TextField
+        variant="outlined"
+        id="price"
+        type="number"
+        {...register("price", {
+            required: { message: "Must enter price", value: true },
+            min: { message: "Price must be above 0", value: 0 },
+        })}
+        helperText={errors.price && <span className="errorText">{errors.price.message}</span>}
+    />
+</FormLabel>
+<FormLabel>Coupon Stock Amount:
+    <TextField
+        variant="outlined"
+        id="amount"
+        type="number"
+        {...register("amount", {
+            required: { message: "Must enter amount", value: true },
+            min: { message: "Stock amount must be above 0", value: 0 },
+        })}
+        helperText={errors.amount && <span className="errorText">{errors.amount.message}</span>}
+    />
+</FormLabel>
+                <FormLabel>Coupon Image:
+                    <TextField
+                        variant="outlined"
+                        id="imageUrl"
+                        {...register("image", {
+                            required: { message: "Must enter image", value: true },
+                        })}
+                        helperText={errors.image && <span className="errorText">{errors.image.message}</span>}
+                    />
+                </FormLabel>
+                <RadioGroup
+                    aria-labelledby="demo-radio-buttons-group-label"
+                    defaultValue="Food"
+                    id="category"
+                    {...register("category")}
+                >
+                    <FormControlLabel
+                        value="Food"
+                        control={<Radio {...register("category")} sx={{ '&.Mui-checked': { color: 'red' } }} />}
+                        label="Food"
+                    />
+                    <FormControlLabel
+                        value="Electricity"
+                        control={<Radio {...register("category")} sx={{ '&.Mui-checked': { color: 'red' } }} />}
+                        label="Electricity"
+                    />
+                    <FormControlLabel
+                        value="Restaurant"
+                        control={<Radio {...register("category")} sx={{ '&.Mui-checked': { color: 'red' } }} />}
+                        label="Restaurant"
+                    />
+                    <FormControlLabel
+                        value="Vacation"
+                        control={<Radio {...register("category")} sx={{ '&.Mui-checked': { color: 'red' } }} />}
+                        label="Vacation"
+                    />
+                </RadioGroup>
+                <Button variant="contained" onClick={handleSubmit(sendForm)}>Add Coupon</Button>
+            </FormControl>
+        </div>
+    );
+}
+
+export default AddCoupon;

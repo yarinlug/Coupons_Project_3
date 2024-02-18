@@ -1,0 +1,21 @@
+.CompanyDetails {
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center; /* Center align children horizontally */
+    text-align: center;
+}
+
+.CompanyDetails .MuiCard-root {
+    background-color: #d4717e4f;
+    max-width: 400px;
+    margin: 10px;
+    border-radius: 15px;
+    border: solid 2px rgb(112, 105, 214);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.CompanyDetails .MuiCard-root:hover {
+    background-color:  rgb(110, 110, 226);
+    transition: background-color 0.7s;
+}
+

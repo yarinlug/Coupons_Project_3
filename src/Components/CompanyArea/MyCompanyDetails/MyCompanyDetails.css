@@ -1,0 +1,25 @@
+.MyCompanyDetails {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.MyCompanyDetails .MuiCard-root {
+    width: 60%;
+    max-width: 400px;
+    background-color: #d4717e4f;
+    box-shadow: 5px 4px 8px rgba(241, 226, 226, 0.1);
+    border-radius: 30px;
+    border: solid 2px rgb(112, 105, 214);
+}
+
+.MyCompanyDetails .MuiCardContent-root {
+    padding: 20px;
+   
+}
+
+.MyCompanyDetails .MuiTypography-root {
+    margin-bottom: 15px;
+}

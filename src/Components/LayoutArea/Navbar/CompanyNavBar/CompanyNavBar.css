@@ -1,0 +1,19 @@
+.CompanyNavBar {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 25px;
+    padding: 15px 5px;
+    border: solid rgb(85, 68, 165) 1px;
+    font-style: italic;
+    background-color: lightgray;
+}
+
+.CompanyNavBar>a {
+    text-decoration: none;
+    color: purple;
+}
+
+.CompanyNavBar>a:hover {
+    border: 1px rgb(14, 151, 243) solid;
+    color: rgb(55, 128, 177)
+}

@@ -1,0 +1,33 @@
+.MyCoupons {
+  text-align: center;
+}
+
+.MyCoupons .Filters {
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    background-color: #3e86ca;
+    margin-bottom: 10px;
+    margin: auto;
+    border-radius: 15px;
+    border: solid 3px purple;
+}
+
+.RadioGroup {
+    display: flex;
+    justify-content: center; 
+}
+.Filters .MuiButtonBase-root{
+    margin: 10px;
+}
+
+
+.Slider{
+    width: 20%;
+}
+.MyCoupons .container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}

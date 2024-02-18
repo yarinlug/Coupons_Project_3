@@ -1,0 +1,15 @@
+.CompanyCard {
+ text-align: center;
+}
+.CompanyCard .MuiCard-root {
+    background-color: rgba(134, 202, 241, 0.418)  ; 
+    max-width: 400px; /* Example max-width */
+    margin: 10px;
+    border-radius: 15px;
+    border: solid 2px grey;
+  }
+  .CompanyCard .MuiCard-root:hover {
+    transition: background-color 0.7s;
+    background-color: rgb(166, 166, 233);
+}
+ 

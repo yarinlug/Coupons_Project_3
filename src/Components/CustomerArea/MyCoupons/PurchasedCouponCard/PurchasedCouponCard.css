@@ -1,0 +1,43 @@
+.PurchasedCouponCard {
+    text-align: center;
+    
+    max-width: 400px;
+    min-width: 400px;
+    max-height: 250px;
+    min-height: 250px;
+    margin: 15px;
+    align-items: center;
+}
+
+.PurchasedCouponCard .MuiCard-root {
+    background-color: #d4717e4f;
+    /* max-width: 400px;
+    min-width: 200px;
+    max-height: 240px;
+    min-height: 240px; */
+    margin: 10px;
+    border-radius: 15px;
+    border: solid 2px rgb(112, 105, 214);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    
+    
+}
+
+.PurchasedCouponCard .MuiCard-root:hover {
+    transition: background-color 0.7s;
+    background-color: rgb(110, 110, 226);
+}
+
+
+.CouponCard .PurchasedCoupon {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    transform: translate(-45%, -45%) rotate(-45deg);
+    background-color: #FF5252;
+    color: rgb(243, 193, 193);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}

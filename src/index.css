@@ -1,0 +1,6 @@
+body, html, #root{
+  margin: 0;
+  height: 100%;
+  background-image: linear-gradient(#8FBC8F,#008080);
+  /* color: white; */
+}

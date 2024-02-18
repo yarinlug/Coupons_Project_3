@@ -1,0 +1,22 @@
+.Customers {
+text-align: center;
+margin: 5px;
+}
+
+.Customers .CustomerCard {
+    width: 20%;
+    margin: 15px;
+}
+
+
+.MuiButton-root {
+    display: flex;
+    justify-content: center;
+}
+
+.Customers .container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
