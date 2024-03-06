@@ -4,17 +4,11 @@ If a method is used improperly the program will throw an exception and discontin
 this is by design.
 
 
-Added Methods:
-* isDateOk and isTitleUnchanged under CompanyService.
-* isEmailUnchanged for both updateCustomer and updateCompany under AdminService.
 
 Notes:
 In order to validate the functionality of the daily job, please disable the couponDailyExpirationJob.stop(); and the
 deletion lines at the end of the tests and edit the end date of one of the two coupons that were added.
 
 
-Extra logic that wasn't in the instructions:
-* Made sure you can't add an already expired coupon, or have a start date that is later than the end date.
-* Customers and companies cannot have their email updated to one that exists for another customer/company.
 
 
